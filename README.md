@@ -10,6 +10,7 @@ Modul Praktikum Sistem Basis Data (MySQL / MariaDB)
 - [DML (Data Manipulation Language)]()
 - [DQL (Data Query Language)]()
 - [DCL (Data Control Language)]()
+- [NoSQL]()
 
 ---
 

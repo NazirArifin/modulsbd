@@ -1,10 +1,10 @@
-# Modul 1 - EER (Enhanced Entity Relationship Diagram)
+# Modul 1 - ERM (Entity Relationship Model)
 
 Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM sederhana.
 
 ## Materi
 
-### ERM (Entity Relationship Modelling)
+### ERM (Entity Relationship Model)
 
 - ERM adalah pendekatan grafis untuk mendesain basis data. Dia merupakan model _high-level_ dari basis data yang akan dibuat yang mendefinisikan elemen data dan hubungannya. ERM terdiri dari 3 komponen utama, yaitu:
 
@@ -35,6 +35,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   * `DOUBLE`
   * `DATE`
   * `DATETIME`
+  * `TIMESTAMP`
   * `BLOB`
   * `TEXT`
   * `MEDIUMTEXT`
@@ -53,6 +54,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 - Tipe data `DOUBLE` digunakan untuk menyimpan data bilangan desimal dengan presisi yang lebih tinggi.
 - Tipe data `DATE` digunakan untuk menyimpan data tanggal.
 - Tipe data `DATETIME` digunakan untuk menyimpan data tanggal dan waktu.
+- Tipe data `TIMESTAMP` digunakan untuk menyimpan data tanggal dan waktu dengan format UNIX timestamp.
 - Tipe data `BLOB` digunakan untuk menyimpan data dalam bentuk binary large object.
 - Tipe data `TEXT` digunakan untuk menyimpan data dalam bentuk teks.
 - Tipe data `MEDIUMTEXT` digunakan untuk menyimpan data dalam bentuk teks dengan panjang maksimal 16 juta karakter.
@@ -72,16 +74,6 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 - Foreign key adalah kolom yang berisi nilai dari primary key pada tabel lain. Foreign key digunakan untuk menghubungkan tabel dengan tabel lainnya.
 
 ### Constraint
-
-- Constraint adalah aturan yang diberikan pada kolom atau tabel. Constraint dapat digunakan untuk membatasi nilai yang dapat dimasukkan ke dalam kolom atau tabel. Constraint yang paling umum digunakan adalah:
-
-  * `NOT NULL` - nilai tidak boleh kosong
-  * `UNIQUE` - nilai tidak boleh ada yang sama
-  * `PRIMARY KEY` - nilai unik dan tidak boleh ada yang sama
-  * `FOREIGN KEY` - nilai harus sama dengan primary key pada tabel lain
-  * `CHECK` - nilai harus memenuhi kondisi tertentu
-  * `DEFAULT` - nilai default jika tidak ada nilai yang dimasukkan
-  * `INDEX` - membuat index untuk kolom
 
 - Constraint dalam relasi tabel antara lain adalah:
 
@@ -192,6 +184,14 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 - Terdapat entitas `petugas` dengan atribut nomor petugas, nama lengkap, jenis kelamin, tanggal lahir, alamat, dan nomor telepon. Buatlah tabel `petugas` dengan atribut yang telah ditentukan.
 
-- Terdapat entitas `peminjaman` dengan atribut nomor peminjaman, nomor keanggotaan, kode buku, tanggal peminjaman, tanggal pengembalian, nomor_petugas, dan status. Buatlah tabel `peminjaman` dengan atribut yang telah ditentukan.
+- Terdapat entitas `peminjaman` dengan atribut nomor peminjaman, tanggal peminjaman, tanggal pengembalian, dan status. Buatlah tabel `peminjaman` dengan atribut yang telah ditentukan.
 
 - Terdapat entitas `pengembalian` dengan atribut nomor pengembalian, nomor peminjaman, tanggal pengembalian, dan denda. Buatlah tabel `pengembalian` dengan atribut yang telah ditentukan.
+
+- Buat relasi antar tabel dengan menggunakan _primary key_ dan _foreign key_. Relasi yang dibuat adalah:
+  - `anggota` dan `peminjaman` (1:n)
+  - `kategori` dan `buku` (1:n)
+  - `anggota` dan `peminjaman` (1:n)
+  - `buku` dan `peminjaman` (1:n)
+  - `petugas` dan `peminjaman` (1:n)
+  - `peminjaman` dan `pengembalian` (1:n)
