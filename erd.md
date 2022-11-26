@@ -12,6 +12,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   * Atribut
   * Relasi
 
+![ERD](https://i.pinimg.com/originals/e9/bd/82/e9bd82cf92894a080eb23a15c246c52b.png)
+
 - ERM dapat dibuat dengan menggunakan software ERM seperti MySQL Workbench, Oracle SQL Developer, dan lain-lain. Pada modul ini, kita akan menggunakan software MySQL Workbench yang dapat diunduh di [sini](https://dev.mysql.com/downloads/workbench/).
 
 - ERM memiliki beberapa tingkat yaitu _Conceptual_, _Logical_, dan _Physical_. _Business Analyst_ menggunakan conceptual dan logical model untuk memodelkan data yang dibutuhkan dari perspektif bisnis. Sedangkan _Database Administrator_ menggunakan physical model untuk memodelkan data yang dibutuhkan dari perspektif teknis yang siap untuk diimplementasikan ke dalam database.
@@ -118,29 +120,33 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 ![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-1.png)
 
-- Buat tabel dengan nama `prodi` dengan struktur kolom sebagai berikut:
-  * `id` - INT, PRIMARY KEY, AUTO_INCREMENT
-  * `nama` - VARCHAR(50)
+- Selanjutnya _double click_ icon __Add Diagram__ untuk membuat diagram baru.
+
+![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-2.png)
+
+- Pilih icon __Table__ untuk membuat tabel baru. Kemudian ubah nama tabel menjadi `prodi` dengan melakukan _double click_ pada tabel tersebut. 
+
+![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-3.png)
+
+- Kemudian di `Column Name` tambahkan kolom `id_prodi` dan `nama_prodi` dengan tipe data `INT` dan `VARCHAR(50)`. Pastikan kolom `id_prodi` memiliki constraint `PRIMARY KEY` __(PK)__, `NOT NULL` __(NN)__ dan `AUTO_INCREMENT` __(AI)__. Jika sudah, tekan tombol X untuk menyimpan perubahan.
+
+![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-4.png)
 
 - Buat tabel dengan nama `mahasiswa` dengan struktur kolom sebagai berikut:
-  * `nim` - VARCHAR(10) - PRIMARY KEY
+  * `nim` - CHAR(10) - PRIMARY KEY
   * `nama` - VARCHAR(50) - NOT NULL
   * `alamat` - VARCHAR(100) - NOT NULL
   * `tgl_lahir` - DATE - NOT NULL
   * `jk` - ENUM('L', 'P') - NOT NULL
-  * `id_prodi` - INT - FOREIGN KEY ke tabel prodi
 
 - Buat tabel dengan nama `matakuliah` dengan struktur kolom sebagai berikut:
   * `kode_mk` - VARCHAR(10) - PRIMARY KEY
   * `nama_mk` - VARCHAR(50) - NOT NULL
-  * `sks` - TINYINT(1) - NOT NULL
-  * `semester` - TINYINT(1) - NOT NULL
-  * `id_prodi` - INT - FOREIGN KEY ke tabel prodi
+  * `sks_mk` - TINYINT(1) - NOT NULL
+  * `semester_mk` - TINYINT(1) - NOT NULL
 
 - Buat tabel dengan nama `nilai` dengan struktur kolom sebagai berikut:
   * `id_nilai` - INT - PRIMARY KEY - AUTO_INCREMENT
-  * `nim` - VARCHAR(10) - FOREIGN KEY ke tabel mahasiswa
-  * `kode_mk` - VARCHAR(10) - FOREIGN KEY ke tabel matakuliah
   * `nilai` - TINYINT(3) - NOT NULL
 
 - Buat tabel dengan nama `dosen` dengan struktur kolom sebagai berikut:
@@ -150,14 +156,14 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   * `alamat` - VARCHAR(100) - NOT NULL
   * `tgl_lahir` - DATE - NOT NULL
   * `jk` - ENUM('L', 'P') - NOT NULL
-  * `id_prodi` - INT - FOREIGN KEY ke tabel prodi
 
 - Buat tabel dengan nama `mengajar` dengan struktur kolom sebagai berikut:
   * `id_mengajar` - INT - PRIMARY KEY - AUTO_INCREMENT
-  * `nis` - VARCHAR(10) - FOREIGN KEY ke tabel dosen
-  * `kode_mk` - VARCHAR(10) - FOREIGN KEY ke tabel matakuliah
 
-- Berikutnya kita buat relasi
+- Berikutnya kita buat relasi antar tabel. Kita akan membuat relasi `1:n` antara tabel `prodi` dan `mahasiswa`. Klik icon __Relationship__ `1:n` untuk membuat relasi baru. Karena relasi `1:n` maka kita harus pilih terlebih dahulu tabel yang memiliki relasi `1` yaitu tabel `mahasiswa`. Kemudian klik tabel yang memiliki relasi `n` yaitu tabel `prodi`. Maka akan muncul garis relasi antara tabel `mahasiswa` dan `prodi` dan akan muncul kolom `prodi_id_prodi` pada tabel `mahasiswa`.
 
+![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-5.png)
+
+- Selanjutnya kita buat relasi `1:n` 
 
 
