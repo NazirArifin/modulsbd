@@ -75,28 +75,28 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 - Constraint adalah aturan yang diberikan pada kolom atau tabel. Constraint dapat digunakan untuk membatasi nilai yang dapat dimasukkan ke dalam kolom atau tabel. Constraint yang paling umum digunakan adalah:
 
-  * NOT NULL - nilai tidak boleh kosong
-  * UNIQUE - nilai tidak boleh ada yang sama
-  * PRIMARY KEY - nilai unik dan tidak boleh ada yang sama
-  * FOREIGN KEY - nilai harus sama dengan primary key pada tabel lain
-  * CHECK - nilai harus memenuhi kondisi tertentu
-  * DEFAULT - nilai default jika tidak ada nilai yang dimasukkan
-  * INDEX - membuat index untuk kolom
+  * `NOT NULL` - nilai tidak boleh kosong
+  * `UNIQUE` - nilai tidak boleh ada yang sama
+  * `PRIMARY KEY` - nilai unik dan tidak boleh ada yang sama
+  * `FOREIGN KEY` - nilai harus sama dengan primary key pada tabel lain
+  * `CHECK` - nilai harus memenuhi kondisi tertentu
+  * `DEFAULT` - nilai default jika tidak ada nilai yang dimasukkan
+  * `INDEX` - membuat index untuk kolom
 
 - Constraint dalam relasi tabel antara lain adalah:
 
-  * One-to-One - satu baris pada tabel A hanya memiliki satu baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel nilai.
-  * One-to-Many - satu baris pada tabel A memiliki banyak baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel mata kuliah.
-  * Many-to-Many - banyak baris pada tabel A memiliki banyak baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel dosen.
+  * `One-to-One` - satu baris pada tabel A hanya memiliki satu baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel nilai.
+  * `One-to-Many` - satu baris pada tabel A memiliki banyak baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel mata kuliah.
+  * `Many-to-Many` - banyak baris pada tabel A memiliki banyak baris pada tabel B dan sebaliknya. Contoh: tabel mahasiswa dan tabel dosen.
 
 - Constraint dalam foreign key antara lain adalah:
 
-  * ON DELETE RESTRICT - tidak menghapus data pada tabel lain jika data pada tabel yang dihapus masih memiliki data pada tabel lain. 
-  * ON DELETE CASCADE - menghapus baris pada tabel yang memiliki foreign key jika baris pada tabel yang memiliki primary key dihapus.
-  * ON DELETE SET NULL - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key dihapus.
-  * ON UPDATE RESTRICT - tidak mengubah data pada tabel lain jika data pada tabel yang diubah masih memiliki data pada tabel lain.
-  * ON UPDATE CASCADE - mengubah nilai foreign key menjadi nilai primary key pada tabel yang memiliki primary key jika baris pada tabel yang memiliki primary key diubah. _*Jarang digunakan karena dapat menyebabkan duplikasi data dan biasanya primary key tidak pernah diubah_.
-  * ON UPDATE SET NULL - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key diubah.
+  * `ON DELETE RESTRICT` - tidak menghapus data pada tabel lain jika data pada tabel yang dihapus masih memiliki data pada tabel lain. 
+  * `ON DELETE CASCADE` - menghapus baris pada tabel yang memiliki foreign key jika baris pada tabel yang memiliki primary key dihapus.
+  * `ON DELETE SET NULL` - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key dihapus.
+  * `ON UPDATE RESTRICT` - tidak mengubah data pada tabel lain jika data pada tabel yang diubah masih memiliki data pada tabel lain.
+  * `ON UPDATE CASCADE` - mengubah nilai foreign key menjadi nilai primary key pada tabel yang memiliki primary key jika baris pada tabel yang memiliki primary key diubah. _*Jarang digunakan karena dapat menyebabkan duplikasi data dan biasanya primary key tidak pernah diubah_.
+  * `ON UPDATE SET NULL` - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key diubah.
 
 ### Entitas
 
