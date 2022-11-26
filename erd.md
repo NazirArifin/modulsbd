@@ -116,6 +116,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 - Buka aplikasi MySQL Workbench, lalu pilih menu __File__ > __New Model__. Kemudian kita akan mengubah nama _Schema_ / _Database_ menjadi `praktikum`. Klik tombol __Apply__ untuk mengubah nama _Schema_ / _Database_.
 
+![image](https://github.com/NazirArifin/modulsbd/blob/main/images/1-1.png)
+
 - Buat tabel dengan nama `prodi` dengan struktur kolom sebagai berikut:
   * `id` - INT, PRIMARY KEY, AUTO_INCREMENT
   * `nama` - VARCHAR(50)
