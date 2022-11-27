@@ -32,54 +32,37 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 - Relasi dapat dinyatakan dengan notasi `n:m`. Notasi `1:1` digunakan untuk relasi one-to-one. Notasi `1:n` digunakan untuk relasi one-to-many. Notasi `n:1` digunakan untuk relasi many-to-one.
 
+### Pembuatan ERM
+
 - ERM dapat dibuat dengan menggunakan software ERM seperti MySQL Workbench, Oracle SQL Developer, dan lain-lain. Pada modul ini, kita akan menggunakan software MySQL Workbench yang dapat diunduh di [https://dev.mysql.com/downloads/workbench/](https://dev.mysql.com/downloads/workbench/).
 
 - ERM memiliki beberapa tingkat yaitu _Conceptual_, _Logical_, dan _Physical_. _Business Analyst_ menggunakan conceptual dan logical model untuk memodelkan data yang dibutuhkan dari perspektif bisnis. Sedangkan _Database Administrator_ menggunakan physical model untuk memodelkan data yang dibutuhkan dari perspektif teknis yang siap untuk diimplementasikan ke dalam database.
 
 - Physical ERM merepresentasikan desain yang sebenarnya pada database relational. Dia menjelaskan bagaimana data harus dibentuk dan dihubungkan dalam database. Hal ini berarti tipe data yang akurat akan digunakan. Selain itu juga perlu ditambahkan primary key, foreign key, dan constraint. Pada praktikum ini, kita akan menggunakan physical ERM.
 
-### Tipe Data
+#### Tipe Data
 
 - Tipe data adalah kumpulan nilai yang memiliki karakteristik yang sama. Tipe data dapat digunakan untuk mendefinisikan kolom dalam tabel. Tipe data yang paling umum digunakan adalah:
 
-  * `CHAR`
-  * `VARCHAR`
-  * `INT`
-  * `TINYINT`
-  * `SMALLINT`
-  * `MEDIUMINT`
-  * `BIGINT`
-  * `FLOAT`
-  * `DOUBLE`
-  * `DATE`
-  * `DATETIME`
-  * `TIMESTAMP`
-  * `BLOB`
-  * `TEXT`
-  * `MEDIUMTEXT`
-  * `LONGTEXT`
-  * `BOOLEAN`
-  * `ENUM`
+  - `CHAR` digunakan untuk menyimpan data yang panjangnya tetap. Jika panjang data yang dimasukkan melebihi panjang yang ditentukan, maka data akan dipotong.
+  - `VARCHAR` digunakan untuk menyimpan data yang panjangnya tidak tetap. Jika panjang data yang dimasukkan melebihi panjang yang ditentukan, maka data akan dipotong.
+  - `TINYINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -128 sampai 127. 
+  - `SMALLINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -32768 sampai 32767.
+  - `MEDIUMINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -8388608 sampai 8388607.
+  - `INT` digunakan untuk menyimpan data bilangan bulat dengan panjang 4 byte (32 bit) dan rentang nilai -2147483648 sampai 2147483647.
+  - `BIGINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -9223372036854775808 sampai 9223372036854775807.
+  - `FLOAT` digunakan untuk menyimpan data bilangan desimal.
+  - `DOUBLE` digunakan untuk menyimpan data bilangan desimal dengan presisi yang lebih tinggi.
+  - `DATE` digunakan untuk menyimpan data tanggal.
+  - `DATETIME` digunakan untuk menyimpan data tanggal dan waktu.
+  - `TIMESTAMP` digunakan untuk menyimpan data tanggal dan waktu dengan format UNIX timestamp.
+  - `BLOB` digunakan untuk menyimpan data dalam bentuk binary large object.
+  - `TEXT` digunakan untuk menyimpan data dalam bentuk teks.
+  - `MEDIUMTEXT` digunakan untuk menyimpan data dalam bentuk teks dengan panjang maksimal 16 juta karakter.
+  - `LONGTEXT` digunakan untuk menyimpan data dalam bentuk teks dengan panjang maksimal 4 miliar karakter.
+  - `ENUM` digunakan untuk menyimpan data yang memiliki pilihan nilai yang terbatas.
 
-- Tipe data `CHAR` digunakan untuk menyimpan data yang panjangnya tetap. Jika panjang data yang dimasukkan melebihi panjang yang ditentukan, maka data akan dipotong.
-- Tipe data `VARCHAR` digunakan untuk menyimpan data yang panjangnya tidak tetap. Jika panjang data yang dimasukkan melebihi panjang yang ditentukan, maka data akan dipotong.
-- Tipe data `TINYINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -128 sampai 127. 
-- Tipe data `SMALLINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -32768 sampai 32767.
-- Tipe data `MEDIUMINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -8388608 sampai 8388607.
-- Tipe data `INT` digunakan untuk menyimpan data bilangan bulat dengan panjang 4 byte (32 bit) dan rentang nilai -2147483648 sampai 2147483647.
-- Tipe data `BIGINT` digunakan untuk menyimpan data bilangan bulat dengan rentang nilai -9223372036854775808 sampai 9223372036854775807.
-- Tipe data `FLOAT` digunakan untuk menyimpan data bilangan desimal.
-- Tipe data `DOUBLE` digunakan untuk menyimpan data bilangan desimal dengan presisi yang lebih tinggi.
-- Tipe data `DATE` digunakan untuk menyimpan data tanggal.
-- Tipe data `DATETIME` digunakan untuk menyimpan data tanggal dan waktu.
-- Tipe data `TIMESTAMP` digunakan untuk menyimpan data tanggal dan waktu dengan format UNIX timestamp.
-- Tipe data `BLOB` digunakan untuk menyimpan data dalam bentuk binary large object.
-- Tipe data `TEXT` digunakan untuk menyimpan data dalam bentuk teks.
-- Tipe data `MEDIUMTEXT` digunakan untuk menyimpan data dalam bentuk teks dengan panjang maksimal 16 juta karakter.
-- Tipe data `LONGTEXT` digunakan untuk menyimpan data dalam bentuk teks dengan panjang maksimal 4 miliar karakter.
-- Tipe data `ENUM` digunakan untuk menyimpan data yang memiliki pilihan nilai yang terbatas.
-
-### Primary Key
+#### Primary Key
 
 - Primary key adalah kolom yang unik dan tidak boleh ada yang sama. Primary key digunakan untuk mengidentifikasi setiap baris pada tabel. Primary key dapat terdiri dari satu kolom atau lebih. Jika terdiri dari lebih dari satu kolom, maka disebut _composite primary key_. Primary key dapat berupa kolom yang berisi angka, teks, atau kombinasi dari keduanya. Primary key __tidak boleh kosong__ dan __tidak boleh ada yang sama__. Jika ada data yang sama, maka data tersebut akan dianggap sebagai duplikat dan akan dihapus.
 
@@ -87,11 +70,20 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 - Primary key dapat dibuat dengan menggunakan tipe data INT, TINYINT, SMALLINT, MEDIUMINT, BIGINT, atau VARCHAR. Primary key dapat dibuat secara otomatis dengan menggunakan AUTO_INCREMENT. AUTO_INCREMENT akan membuat nilai primary key secara otomatis dan bertambah 1 setiap kali data baru ditambahkan. AUTO_INCREMENT hanya dapat digunakan untuk kolom yang bertipe INT, TINYINT, SMALLINT, MEDIUMINT, atau BIGINT. 
 
-### Foreign Key
+#### Foreign Key
 
 - Foreign key adalah kolom yang berisi nilai dari primary key pada tabel lain. Foreign key digunakan untuk menghubungkan tabel dengan tabel lainnya.
 
-### Constraint
+#### Constraint
+
+- Constraint dalam tabel dan kolom antara lain adalah:
+
+  - `NOT NULL` digunakan untuk menentukan kolom yang tidak boleh kosong.
+  - `UNIQUE` digunakan untuk menentukan kolom yang tidak boleh ada yang sama.
+  - `DEFAULT` digunakan untuk menentukan nilai default dari kolom.
+  - `CHECK` digunakan untuk menentukan nilai yang diperbolehkan untuk kolom.
+  - `PRIMARY` digunakan untuk menentukan kolom sebagai primary key.
+  - `FOREIGN` digunakan untuk menentukan kolom sebagai foreign key.
 
 - Constraint dalam relasi tabel antara lain adalah:
 
@@ -105,10 +97,8 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   * `ON DELETE CASCADE` - menghapus baris pada tabel yang memiliki foreign key jika baris pada tabel yang memiliki primary key dihapus.
   * `ON DELETE SET NULL` - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key dihapus.
   * `ON UPDATE RESTRICT` - tidak mengubah data pada tabel lain jika data pada tabel yang diubah masih memiliki data pada tabel lain.
-  * `ON UPDATE CASCADE` - mengubah nilai foreign key menjadi nilai primary key pada tabel yang memiliki primary key jika baris pada tabel yang memiliki primary key diubah. _*Jarang digunakan karena dapat menyebabkan duplikasi data dan biasanya primary key tidak pernah diubah_.
+  * `ON UPDATE CASCADE` - mengubah nilai foreign key menjadi nilai primary key pada tabel yang memiliki primary key jika baris pada tabel yang memiliki primary key diubah.
   * `ON UPDATE SET NULL` - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key diubah.
-
-
 
 ## Praktikum
 
