@@ -4,17 +4,35 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 ## Materi
 
+![ERD](https://cdn-images.visual-paradigm.com/guide/data-modeling/what-is-erd/01-entity-relationship-diagram.png)
+
 ### ERM (Entity Relationship Model)
 
 - ERM adalah pendekatan grafis untuk mendesain basis data. Dia merupakan model _high-level_ dari basis data yang akan dibuat yang mendefinisikan elemen data dan hubungannya. ERM terdiri dari 3 komponen utama, yaitu:
 
-  * Entitas
-  * Atribut
-  * Relasi
+  * __Entitas__
+  * __Atribut__
+  * __Relasi__
 
-![ERD](https://i.pinimg.com/originals/e9/bd/82/e9bd82cf92894a080eb23a15c246c52b.png)
+#### Entitas
 
-- ERM dapat dibuat dengan menggunakan software ERM seperti MySQL Workbench, Oracle SQL Developer, dan lain-lain. Pada modul ini, kita akan menggunakan software MySQL Workbench yang dapat diunduh di [sini](https://dev.mysql.com/downloads/workbench/).
+- Entitas adalah objek yang ingin direpresentasikan dalam database. Contoh entitas adalah mahasiswa, dosen, matakuliah, dan lain-lain. Setiap entitas memiliki atribut yang merepresentasikan karakteristik dari entitas tersebut. Contoh atribut dari entitas mahasiswa adalah nama, nim, alamat, dan lain-lain.
+
+- Entitas dapat direpresentasikan dalam bentuk tabel. Setiap kolom pada tabel merepresentasikan atribut dari entitas tersebut. Setiap baris pada tabel merepresentasikan satu entitas. Contoh tabel untuk entitas mahasiswa adalah tabel mahasiswa.
+
+#### Atribut
+
+- Atribut adalah karakteristik dari entitas. Atribut dapat berupa data maupun informasi. Contoh atribut adalah nama, alamat, dan lain-lain.
+
+- Atribut dapat direpresentasikan dalam bentuk kolom. Setiap kolom pada tabel merepresentasikan atribut dari entitas tersebut. Setiap baris pada tabel merepresentasikan satu entitas. Contoh kolom untuk atribut nama adalah kolom nama.
+
+#### Relasi
+
+- Relasi adalah hubungan antar entitas. Contoh relasi adalah mahasiswa mengambil matakuliah, dosen mengajar matakuliah, dan lain-lain. Setiap relasi memiliki atribut yang merepresentasikan karakteristik dari relasi tersebut. Contoh atribut dari relasi mahasiswa mengambil matakuliah adalah nilai, dan lain-lain.
+
+- Relasi dapat dinyatakan dengan notasi `n:m`. Notasi `1:1` digunakan untuk relasi one-to-one. Notasi `1:n` digunakan untuk relasi one-to-many. Notasi `n:1` digunakan untuk relasi many-to-one.
+
+- ERM dapat dibuat dengan menggunakan software ERM seperti MySQL Workbench, Oracle SQL Developer, dan lain-lain. Pada modul ini, kita akan menggunakan software MySQL Workbench yang dapat diunduh di [https://dev.mysql.com/downloads/workbench/](https://dev.mysql.com/downloads/workbench/).
 
 - ERM memiliki beberapa tingkat yaitu _Conceptual_, _Logical_, dan _Physical_. _Business Analyst_ menggunakan conceptual dan logical model untuk memodelkan data yang dibutuhkan dari perspektif bisnis. Sedangkan _Database Administrator_ menggunakan physical model untuk memodelkan data yang dibutuhkan dari perspektif teknis yang siap untuk diimplementasikan ke dalam database.
 
@@ -90,23 +108,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   * `ON UPDATE CASCADE` - mengubah nilai foreign key menjadi nilai primary key pada tabel yang memiliki primary key jika baris pada tabel yang memiliki primary key diubah. _*Jarang digunakan karena dapat menyebabkan duplikasi data dan biasanya primary key tidak pernah diubah_.
   * `ON UPDATE SET NULL` - mengubah nilai foreign key menjadi NULL jika baris pada tabel yang memiliki primary key diubah.
 
-### Entitas
 
-- Entitas adalah objek yang ingin direpresentasikan dalam database. Contoh entitas adalah mahasiswa, dosen, matakuliah, dan lain-lain. Setiap entitas memiliki atribut yang merepresentasikan karakteristik dari entitas tersebut. Contoh atribut dari entitas mahasiswa adalah nama, nim, alamat, dan lain-lain.
-
-- Entitas dapat direpresentasikan dalam bentuk tabel. Setiap kolom pada tabel merepresentasikan atribut dari entitas tersebut. Setiap baris pada tabel merepresentasikan satu entitas. Contoh tabel untuk entitas mahasiswa adalah tabel mahasiswa.
-
-### Atribut
-
-- Atribut adalah karakteristik dari entitas. Atribut dapat berupa data maupun informasi. Contoh atribut adalah nama, alamat, dan lain-lain.
-
-- Atribut dapat direpresentasikan dalam bentuk kolom. Setiap kolom pada tabel merepresentasikan atribut dari entitas tersebut. Setiap baris pada tabel merepresentasikan satu entitas. Contoh kolom untuk atribut nama adalah kolom nama.
-
-### Relasi
-
-- Relasi adalah hubungan antar entitas. Contoh relasi adalah mahasiswa mengambil matakuliah, dosen mengajar matakuliah, dan lain-lain. Setiap relasi memiliki atribut yang merepresentasikan karakteristik dari relasi tersebut. Contoh atribut dari relasi mahasiswa mengambil matakuliah adalah nilai, dan lain-lain.
-
-- Relasi dapat dinyatakan dengan notasi `n:m`. Notasi `1:1` digunakan untuk relasi one-to-one. Notasi `1:n` digunakan untuk relasi one-to-many. Notasi `n:1` digunakan untuk relasi many-to-one.
 
 ## Praktikum
 
@@ -176,22 +178,49 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
 
 ## Tugas
 
-- Terdapat entitas `anggota` dengan atribut nomor keanggotaan, nama lengkap, jenis kelamin, tanggal lahir, alamat, dan nomor telepon. Buatlah tabel `anggota` dengan atribut yang telah ditentukan.
+1. Pada aplikasi perpustakaan, terdapat beberapa entitas dan relasi sebagai berikut:
 
-- Terdapat entitas `kategori` untuk kategori buku dengan atribut kode kategori, nama kategori, dan keterangan. Buatlah tabel `kategori` dengan atribut yang telah ditentukan.
+  - Terdapat entitas `anggota` dengan atribut nomor keanggotaan, nama lengkap, jenis kelamin, tanggal lahir, alamat, dan nomor telepon.
+  - Terdapat entitas `kategori` untuk kategori buku dengan atribut kode kategori, nama kategori, dan keterangan.
+  - Terdapat entitas `buku` dengan atribut kode buku, judul buku, pengarang, penerbit, tahun terbit, dan jumlah buku.
+  - Terdapat entitas `petugas` dengan atribut nomor petugas, nama lengkap, jenis kelamin, tanggal lahir, alamat, dan nomor telepon. 
+  - Terdapat entitas `peminjaman` dengan atribut nomor peminjaman, tanggal peminjaman, tanggal pengembalian, dan status. 
+  - Terdapat entitas `detail_peminjaman` dengan atribut nomor peminjaman, kode buku, dan jumlah buku. 
+  - Terdapat entitas `pengembalian` dengan atribut nomor pengembalian, nomor peminjaman, tanggal pengembalian, dan denda. 
 
-- Terdapat entitas `buku` dengan atribut kode buku, judul buku, pengarang, penerbit, tahun terbit, dan jumlah buku. Buatlah tabel `buku` dengan atribut yang telah ditentukan.
+  - Buat relasi antar tabel dengan menggunakan _primary key_ dan _foreign key_. Relasi yang dibuat adalah:
+    - `kategori` dan `buku` (1:n)
+    - `anggota` dan `peminjaman` (1:n)
+    - `petugas` dan `peminjaman` (1:n)
+    - `peminjaman` dan `detail_peminjaman` (1:n)
+    - `peminjaman` dan `pengembalian` (1:n)
 
-- Terdapat entitas `petugas` dengan atribut nomor petugas, nama lengkap, jenis kelamin, tanggal lahir, alamat, dan nomor telepon. Buatlah tabel `petugas` dengan atribut yang telah ditentukan.
+2. Berdasarkan analisa, aplikasi __"Klinik Tong Fang"__ memiliki kebutuhan sebagai berikut:
 
-- Terdapat entitas `peminjaman` dengan atribut nomor peminjaman, tanggal peminjaman, tanggal pengembalian, dan status. Buatlah tabel `peminjaman` dengan atribut yang telah ditentukan.
+  - Klinik tersebut memiliki nama, alamat, nomor telepon, email, dan website.
+  - Klinik tersebut memiliki pegawai dengan nama, status BPJS, jenis kelamin, tanggal lahir, alamat, nomor telepon, dan email.
+  - Beberapa pegawai adalah dokter dengan spesialisasi dan ada dokter umum. Seorang dokter dapat memiliki lebih dari satu spesialisasi.
+  - Klinik tersebut memiliki pasien dengan nama, jenis kelamin, tanggal lahir, alamat, nomor telepon, email dan status BPJS.
+  - Pasien dapat melakukan pemeriksaan dengan dokter. Seorang pasien dapat melakukan pemeriksaan dengan lebih dari satu dokter.
+  - Biaya pemeriksaan ditentukan oleh siapa yang melakukan pemeriksaan. Jika dokter umum melakukan pemeriksaan, maka biaya pemeriksaan adalah Rp 50.000. Jika dokter spesialis melakukan pemeriksaan, maka biaya pemeriksaan adalah Rp 100.000.
+  - Jika pasien memiliki status BPJS, maka biaya pemeriksaan akan ditanggung BPJS. Jika tidak, maka pasien yang melakukan pemeriksaan akan membayar biaya pemeriksaan.
 
-- Terdapat entitas `pengembalian` dengan atribut nomor pengembalian, nomor peminjaman, tanggal pengembalian, dan denda. Buatlah tabel `pengembalian` dengan atribut yang telah ditentukan.
+  - Buat _Entity Relationship Diagram_ dari analisa kebutuhan di atas.
+  - Buat _SQL Script_ untuk membuat tabel-tabel yang dibutuhkan.
 
-- Buat relasi antar tabel dengan menggunakan _primary key_ dan _foreign key_. Relasi yang dibuat adalah:
-  - `anggota` dan `peminjaman` (1:n)
-  - `kategori` dan `buku` (1:n)
-  - `anggota` dan `peminjaman` (1:n)
-  - `buku` dan `peminjaman` (1:n)
-  - `petugas` dan `peminjaman` (1:n)
-  - `peminjaman` dan `pengembalian` (1:n)
+3. Berdasarkan analisa, warung makan "Sate Kambing Pak Budi" memiliki kebutuhan sebagai berikut:
+
+  - Warung makan tersebut memiliki nama, alamat, nomor telepon, dan email.
+  - Warung makan tersebut memiliki pegawai dengan nama, jenis kelamin, tanggal lahir, alamat, nomor telepon, dan email.
+  - Warung makan tersebut memiliki pelanggan dengan nama, jenis kelamin, tanggal lahir, alamat, nomor telepon, dan email. Data yang harus terisi adalah nama, sedangkan data lainnya boleh kosong.
+  - Warung makan tersebut memiliki menu makanan dengan nama, harga, dan keterangan.
+  - Pelanggan dapat memesan makanan. Seorang pelanggan dapat memesan lebih dari satu makanan.
+  - Pemesanan dapat dilakukan secara online atau langsung ke kasir. Jika dilakukan secara online, maka pelanggan harus mengisi data diri.
+  - Pembayaran dilakukan berdasarkan pesanan. Jika pelanggan memesan secara online, maka pembayaran dilakukan secara online melalui transfer bank. Jika pelanggan memesan langsung ke kasir, maka pembayaran dilakukan langsung ke kasir.
+
+  - Buat _Entity Relationship Diagram_ dari analisa kebutuhan di atas.
+  - Buat _SQL Script_ untuk membuat tabel-tabel yang dibutuhkan.
+
+## Referensi
+
+- [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/)
