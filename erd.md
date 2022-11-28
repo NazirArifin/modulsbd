@@ -183,7 +183,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
     - `anggota` dan `peminjaman` (1:n)
     - `petugas` dan `peminjaman` (1:n)
     - `peminjaman` dan `detail_peminjaman` (1:n)
-    - `peminjaman` dan `pengembalian` (1:n)
+    - `peminjaman` dan `pengembalian` (1:1)
 
 2. Berdasarkan analisa, aplikasi __"Klinik Tong Fang"__ memiliki kebutuhan sebagai berikut:
 
