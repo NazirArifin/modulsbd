@@ -160,7 +160,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep ERM dan dapat membuat ERM s
   - `mahasiswa` dan `nilai`
   - `matakuliah` dan `nilai`
 
-- Buat relasi `n:m` antara tabel `dosen` dan `matakuliah`. Relasi `n:m` digunakan karena satu dosen dapat mengajar lebih dari satu matakuliah dan satu matakuliah dapat diajar oleh lebih dari satu dosen.
+- Buat relasi `1:n` antara `dosen` dengan `mengajar` dan `matakuliah` dengan `mengajar`. Maka akan muncul garis relasi antara tabel `mengajar` dan `dosen` dan `matakuliah` dan akan muncul kolom `dosen_nis` dan `matakuliah_kode_mk` pada tabel `mengajar`.
 
 - Setelah semua relasi dibuat, maka diagram akan dapat diekspor ke dalam bentuk _SQL Script_ ataupun gambar. Tekan menu __File__ dan pilih __Export__ untuk mengekspor diagram ke dalam bentuk _SQL Script_ atau gambar.
 
