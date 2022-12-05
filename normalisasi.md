@@ -14,17 +14,9 @@ Normalisasi adalah proses untuk mengubah suatu tabel yang tidak ternormalisasi m
 
 Berikut adalah contoh tabel `buku` dari aplikasi perpustakaan yang belum dalam 1NF (Unnormalized Form):
 
-| JUDUL | PENGARANG | TOPIK | PENERBIT | TAHUN TERBIT | FORMAT | HARGA
-| --- | --- | --- | --- | --- |
-| Pemrograman Java | Eko Kurniawan | Pemrograman, Java, Desktop | Andi Offset | 2010 | Buku | 100000
-| Pemrograman Java | Eko Kurniawan | Pemrograman, PHP, Web | Media Offset | 2011 | Buku Digital | 750000
-
+![image](/images/2-1.png)
 
 ### 1NF (First Normal Form)
-
-Tabel di atas memiliki beberapa masalah, yaitu:
-
-- Kolom TOPIK memiliki banyak nilai
 
 1NF adalah normalisasi pertama yang dilakukan pada tabel. Tabel yang sudah dalam 1NF disebut tabel yang sudah ternormalisasi. Tabel yang sudah dalam 1NF memiliki kriteria, yaitu:
 
@@ -34,16 +26,16 @@ Tabel di atas memiliki beberapa masalah, yaitu:
 
 Untuk menyesuaikan tabel dengan 1NF, maka tabel perlu menambahkan primary key dan memisahkan kolom TOPIK menjadi tabel baru. Berikut adalah tabel `buku` yang sudah dalam 1NF:
 
-| ID | JUDUL | PENGARANG | PENERBIT | TAHUN TERBIT | FORMAT | HARGA
-| --- | --- | --- | --- | --- |
-| 1 | Pemrograman Java | Eko Kurniawan | Andi Offset | 2010 | Buku | 100000
-| 2 | Pemrograman Java | Eko Kurniawan | Media Offset | 2011 | Buku Digital | 750000
+![image](/images/2-2.png)
 
 | ID | ID BUKU | TOPIK
 | --- | --- | --- |
 | 1 | 1 | Pemrograman |
 | 2 | 1 | Java |
 | 3 | 1 | Desktop |
+| 4 | 2 | Pemrograman |
+| 5 | 2 | Java |
+| 6 | 2 | Web |
 
 Tabel di atas sudah dalam 1NF karena setiap kolom hanya menyimpan satu nilai dan setiap baris memiliki nilai yang unik.
 
@@ -55,42 +47,63 @@ Tabel di atas sudah dalam 1NF karena setiap kolom hanya menyimpan satu nilai dan
 
   __```Tidak ada composite primary key (tidak ada primary key yang terdiri dari lebih dari satu kolom)```__
 
-  __```Tidak ada atribut yang tidak bergantung pada primary key```__
-
 2NF menyatakan tidak boleh terdapat _composite_key_. Pada kasus ini, keunikan data ditentukan oleh kolom `JUDUL` dan `PENERBIT`. Maka, kolom dipisah menjadi tabel baru. Berikut adalah tabel `buku` yang sudah dalam 2NF:
 
-| ID | JUDUL | PENGARANG | TAHUN TERBIT | FORMAT | HARGA
-| --- | --- | --- | --- | --- |
-| 1 | Pemrograman Java | Eko Kurniawan | 2010 | Buku | 100000
-| 2 | Pemrograman Java | Eko Kurniawan | 2011 | Buku Digital | 750000
-
-| ID | ID BUKU | TOPIK
-| --- | --- | --- |
-| 1 | 1 | Pemrograman |
-| 2 | 1 | Java |
-| 3 | 1 | Desktop |
+![image](/images/2-3.png)
 
 | ID | NAMA
 | --- | --- |
 | 1 | Andi Offset |
 | 2 | Media Offset |
 
-2NF juga menyatakan bahwa setiap kolom harus terkait dengan primary key. Jika ada kolom yang tidak terkait dengan primary key, maka kolom tersebut harus dipisahkan menjadi tabel baru. Pada kasus ini, kolom `HARGA` tidak terkait dengan primary key. Maka, kolom dipisah menjadi tabel baru. Berikut adalah tabel `buku` yang sudah dalam 2NF:
-
-| ID | JUDUL | PENGARANG | TAHUN TERBIT | FORMAT
-| --- | --- | --- | --- | --- |
-| 1 | Pemrograman Java | Eko Kurniawan | 2010 | Buku
-| 2 | Pemrograman Java | Eko Kurniawan | 2011 | Buku Digital
-
-
-| ID | ID BUKU | HARGA
-| --- | --- | --- |
-| 1 | 1 | 100000 |
-| 2 | 2 | 750000 |
-
 ### 3NF (Third Normal Form)
 
+3NF adalah normalisasi ketiga yang dilakukan pada tabel. Tabel yang sudah dalam 3NF memiliki kriteria, yaitu:
 
+  __```Tabel dalam 3NF harus sudah dalam 2NF```__
+
+  __```Tidak ada atribut yang memiliki transitive functional dependency```__
+
+Functional dependency adalah hubungan antara kolom yang satu dengan kolom yang lain. Jika ada kolom yang memiliki functional dependency, maka kolom tersebut harus dipisahkan menjadi tabel baru. Pada kasus ini, kolom `FORMAT` memiliki functional dependency dengan kolom `HARGA`. Jika kolom `FORMAT` berubah, maka kolom `HARGA` juga berubah. Maka, kolom `FORMAT` dan `HARGA` dipisah menjadi tabel baru. Berikut adalah tabel `buku` yang sudah dalam 3NF:
+
+ID | JUDUL | PENGARANG | PENERBIT | TAHUN | FORMAT
+--- | --- | --- | --- | --- | ---
+1 | Pemrograman Java | Andi Offset | 1 | 2010 | 1
+2 | Pemrograman Java (Web) | Andi Offset | 2 | 2010 | 2
+
+| ID | FORMAT | HARGA
+| --- | --- | --- |
+| 1 | Buku Digital | 75000 |
+| 2 | Buku | 100000 |
+
+
+
+## Praktikum
+
+- Buatlah tabel `buku` yang sudah dalam 1NF, 2NF, dan 3NF menggunakan MySQL Workbench.
+
+## Tugas
+
+1. Terdapat data `mahasiswa` yang memiliki atribut `NIM`, `NAMA`, `EMAIL`, `PRODI`, `FAKULTAS`, `MATKUL`. 
+  - Kolom `MATKUL` memiliki banyak nilai.
+
+  - Buatlah tabel `mahasiswa` yang sudah dalam 1NF, 2NF, dan 3NF menggunakan MySQL Workbench.
+
+2. Terdapat data `produk` yang memiliki atribut `ID`, `NAMA`, `HARGA`, `STOK`, `SATUAN`, `SUPPLIER`, `KATEGORI`, `SUB KATEGORI`, `DESKRIPSI`. 
+  - Kolom `KATEGORI` dan `SUB KATEGORI` memiliki banyak nilai.
+
+  - Buatlah tabel `produk` yang sudah dalam 1NF, 2NF, dan 3NF menggunakan MySQL Workbench.
+
+3. Terdapat data `pegawai` yang memiliki atribut `ID`, `NAMA`, `ALAMAT`, `JABATAN`, `GAJI`, `TUNJANGAN`, `POTONGAN`, `TANGGAL MASUK`, `TANGGAL KELUAR`. 
+  - Kolom `GAJI`, `TUNJANGAN`, dan `POTONGAN` memiliki functional dependency.
+
+  - Buatlah tabel `pegawai` yang sudah dalam 1NF, 2NF, dan 3NF menggunakan MySQL Workbench.
+
+# Referensi
+
+[https://www.guru99.com/database-normalization.html](https://www.guru99.com/database-normalization.html)
+
+[https://en.wikipedia.org/wiki/Database_normalization](https://en.wikipedia.org/wiki/Database_normalization)
 
 
 
