@@ -6,10 +6,11 @@ Modul Praktikum Sistem Basis Data (MySQL / MariaDB)
 
 - [Entity Relationship Diagram](https://github.com/NazirArifin/modulsbd/blob/main/erd.md)
 - [Normalisasi](https://github.com/NazirArifin/modulsbd/blob/main/normalisasi.md)
-- [DDL (Data Definition Language)]()
-- [DML (Data Manipulation Language)]()
-- [DQL (Data Query Language)]()
-- [DCL (Data Control Language)]()
+- [DDL (Data Definition Languange)](https://github.com/NazirArifin/modulsbd/blob/main/ddl.md)
+- [DML (Data Manipulation Language)](https://github.com/NazirArifin/modulsbd/blob/main/dml.md)
+- [Query]()
+- [Join]()
+- [View, Function & Procedure]()
 - [NoSQL]()
 
 ---
