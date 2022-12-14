@@ -518,7 +518,11 @@ SELECT DISTINCT dep_id, job_name FROM employees;
 
 ## Tugas
 
-Kerjakan minimal __50 soal__ yang ada di [https://www.w3resource.com/sql-exercises/employee-database-exercise/index.php](https://www.w3resource.com/sql-exercises/employee-database-exercise/index.php) dan belum dikerjakan di praktikum.
+- Kerjakan quiz di [https://www.sql-practice.com/](https://www.sql-practice.com/) sampai selesai. Setiap soal dan jawaban harus di screenshot dan dimasukkan ke laporan. Contoh screenshot:
+
+![contoh screenshot](./images/5-1.png)
+
+- __KERJAKAN SENDIRI__, jangan mengambil jawaban teman! Asah skill jangan ambil jalan pintas tapi membuat Anda jadi tidak tahu
 
 
 
