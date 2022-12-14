@@ -464,57 +464,61 @@ SELECT * FROM employees;
 
 - Berikutnya kerjakan soal-soal berikut:
 
-### 1. Tampilkan semua salary (gaji) karyawan
+1. Tampilkan semua salary (gaji) karyawan
   
 ```sql
 SELECT salary FROM employees;
 ```
 
-### 2. Tampilkan job_name (nama pekerjaan) yang unique (tidak ada yang sama)
+2. Tampilkan job_name (nama pekerjaan) yang unique (tidak ada yang sama)
 
 ```sql
 SELECT DISTINCT job_name FROM employees;
 ```
 
-### 3. Tampilkan dep_id (department id) yang unique dan job_name nya
+3. Tampilkan dep_id (department id) yang unique dan job_name nya
 
 ```sql
 SELECT DISTINCT dep_id, job_name FROM employees;
 ```
 
-### 4. Tampilkan data karyawan yang memiliki dep_id (departemen) bukan 2001
+4. Tampilkan data karyawan yang memiliki dep_id (departemen) bukan 2001
 
-### 5. Tampilkan data karyawan yang hire_date (tanggal bekerja) sebelum 2001
+5. Tampilkan data karyawan yang hire_date (tanggal bekerja) sebelum 2001
 
-### 6. Tampilkan rata-rata gaji yang pekerjaannya adalah 'ANALYST'
+6. Tampilkan rata-rata gaji yang pekerjaannya adalah 'ANALYST'
 
-### 7. Tampilkan karyawan yang memiliki nama 'BLAZE'
+7. Tampilkan karyawan yang memiliki gaji (salary) lebih terbesar nomor 2
 
-### 8. Tampilkan karyawan yang commision (komisi) lebih dari gaji (salary) nya
+8. Tampilkan karyawan yang commision (komisi) lebih dari gaji (salary) nya
 
-### 9. Tampilkan karyawan yang salary (gaji) nya lebih dari 3000 setelah mendapatkan 25% peningkatan gaji
+9. Tampilkan karyawan yang salary (gaji) nya lebih dari 3000 setelah mendapatkan 25% peningkatan gaji
 
-### 10. Tampilkan nama karyawan dan nama (manager_id) managernya menghasilkan string 'BLAZE bekerja untuk KAYLING'
+10. Tampilkan nama karyawan dan nama (manager_id) managernya menghasilkan string 'BLAZE bekerja untuk KAYLING' (gunakan fungsi CONCAT)
 
-### 11. Tampilkan karyawan yang gaji (salary) nya kurang dari 3500
+11. Tampilkan karyawan yang gaji (salary) nya kurang dari 3500
 
-### 12. Tampilkan karyawan yang bergabung (hire_date) pada tahun 1991
+12. Tampilkan karyawan yang bergabung (hire_date) pada tahun 1991
 
-### 13. Tampilkan karyawan yang tidak memiliki manager
+13. Tampilkan karyawan yang tidak memiliki manager
 
-### 14. Tampilkan karyawan yang salary (gaji) ganjil
+14. Tampilkan karyawan yang menjadi manager
 
-### 15. Tampilkan karyawan yang bergabung (hire_date) pada bulan APRIL
+15. Tampilkan karyawan yang bergabung (hire_date) pada bulan APRIL
 
-### 16. Tampilkan data karyawan yang bergabung (hire_date) pada bulan apapun tapi nama bulan harus memiliki huruf 'A' (gunakan fungsi TO_CHAR dan LIKE)
+16. Tampilkan data karyawan yang bergabung (hire_date) pada bulan apapun tapi nama bulan harus memiliki huruf 'A' (gunakan fungsi TO_CHAR dan LIKE)
 
-### 17. Tampilkan karyawan yang memiliki nama yang diakhiri huruf 'S' dan panjang karakternya 6
+17. Tampilkan karyawan yang memiliki nama yang diakhiri huruf 'S' dan panjang karakternya 6
 
-### 18. Tampilkan jumlah pegawai, rata-rata gaji di kelompokkan berdasarakan job_name dan dep_id
+18. Tampilkan jumlah pegawai, rata-rata gaji di kelompokkan berdasarakan job_name dan dep_id
 
-### 19. Tampilkan seluruh manager beserta jumlah karyawan yang bekerja di bawahnya. Hasil diurutkan berdasarkan manager_id
+19. Tampilkan seluruh manager beserta jumlah karyawan yang bekerja di bawahnya. Hasil diurutkan berdasarkan manager_id
 
-### 20. Tampilkan karyawan kecuali PRESIDENT dan MANAGER (gunakan fungsi NOT IN) urutkan berdasarkan salary (gaji) dari yang terbesar
+20. Tampilkan karyawan kecuali PRESIDENT dan MANAGER (gunakan fungsi NOT IN) urutkan berdasarkan salary (gaji) dari yang terbesar
 
 ## Tugas
+
+Kerjakan minimal __50 soal__ yang ada di [https://www.w3resource.com/sql-exercises/employee-database-exercise/index.php](https://www.w3resource.com/sql-exercises/employee-database-exercise/index.php) dan belum dikerjakan di praktikum.
+
+
 
