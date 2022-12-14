@@ -522,6 +522,8 @@ SELECT DISTINCT dep_id, job_name FROM employees;
 
 ![contoh screenshot](./images/5-1.png)
 
+- Berikan penjelasan query yang Anda tuliskan untuk setiap soal! Jangan cuma screenshot!
+
 - __KERJAKAN SENDIRI__, jangan mengambil jawaban teman! Asah skill jangan ambil jalan pintas tapi membuat Anda jadi tidak tahu
 
 
