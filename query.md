@@ -4,7 +4,7 @@ Tujuan Pembelajaran: Mahasiswa dapat memahami konsep query dan dapat membuat que
 
 ## Materi
 
-![](https://preview.redd.it/423ha0w8lq181.png?width=640&crop=smart&auto=webp&s=51303b9336749de18dbf5663e3f76fc31d8c9de6)
+![](https://ih1.redbubble.net/image.2688157757.6248/mp,504x516,gloss,f8f8f8,t-pad,600x600,f8f8f8.u1.jpg)
 
 ### SELECT Query
 
