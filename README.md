@@ -9,8 +9,7 @@ Modul Praktikum Sistem Basis Data (MySQL / MariaDB)
 - [DDL (Data Definition Languange)](https://github.com/NazirArifin/modulsbd/blob/main/ddl.md)
 - [DML (Data Manipulation Language)](https://github.com/NazirArifin/modulsbd/blob/main/dml.md)
 - [Query SELECT](https://github.com/NazirArifin/modulsbd/blob/main/query.md)
-- [Join]()
-- [View, Function & Procedure]()
+- [Join, View, Function & Procedure](https://github.com/NazirArifin/modulsbd/blob/main/join.md)
 - [NoSQL]()
 
 ---
