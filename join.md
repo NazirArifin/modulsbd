@@ -368,31 +368,37 @@ CREATE TABLE comment (
   - Jika email dan password lebih dari 255 karakter maka Stored Procedure ini akan mengembalikan nilai `4`. 
 
 ```sql
-CREATE PROCEDURE sp_add_user(name VARCHAR(255), email VARCHAR(255), password VARCHAR(255), OUT result INT)
+CREATE PROCEDURE `sp_add_user`(name VARCHAR(255), emailInput VARCHAR(255), password VARCHAR(255), OUT result INT)
 BEGIN
     DECLARE result INT DEFAULT 0;
     DECLARE email_count INT DEFAULT 0;
     DECLARE email_length INT DEFAULT 0;
     DECLARE password_length INT DEFAULT 0;
     
-    SELECT COUNT(*) INTO email_count FROM user WHERE email = email;
-    SELECT LENGTH(email) INTO email_length FROM user WHERE email = email;
-    SELECT LENGTH(password) INTO password_length FROM user WHERE email = email;
+    SELECT COUNT(*) FROM user WHERE email = emailInput INTO email_count;
+    SELECT LENGTH(emailInput) INTO email_length;
+    SELECT LENGTH(password) INTO password_length;
     
     IF email_count > 0 THEN
-        SET result = 2;
+        SET result = 0;
     ELSEIF email_length = 0 OR password_length = 0 THEN
-        SET result = 3;
+        SET result = 0;
     ELSEIF email_length > 255 OR password_length > 255 THEN
-        SET result = 4;
+        SET result = 0;
     ELSE
-        INSERT INTO user (name, email, password) VALUES (name, email, password);
+        INSERT INTO user (name, email, password) VALUES (name, emailInput, password);
         SET result = LAST_INSERT_ID();
     END IF;
     
     SELECT result;
 END
 ```
+
+```sql
+SET @a := 0;
+CALL sp_add_user('noname', 'admin@localhost3', 'aaaaa', @a);
+```
+
 
 - Buatlah Stored Procedure untuk menghapus data `user` dengan parameter `id` dengan nama `sp_delete_user` dan mengembalikan nilai `1` jika berhasil dan `0` jika gagal. Pastikan data `user` yang akan dihapus tidak memiliki `post` atau `comment`. Jika memiliki `post` atau `comment` maka Stored Procedure akan menghapusnya terlebih dahulu.
 - Buatlah Stored Procedure yang menghapus semua `post` yang `created_at` lebih dari 10 tahun yang lalu dan tidak memiliki `comment`. Jika memiliki `comment` maka Stored Procedure akan menghasilkan angka 2.
